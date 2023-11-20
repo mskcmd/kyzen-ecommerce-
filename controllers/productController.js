@@ -51,11 +51,14 @@ const inserproduct = async (req, res) => {
           .toFile("public/products/crope/" + img[i]);
       }
 
+      // Fetch the category ID based on the category name (assuming a case-insensitive match)
+      const category = await categorydata.findOne({ name: details.category }, '_id');
+
       let product = new productdata({
         name: details.name,
         price: details.price,
         quantity: details.quantity,
-        category: details.category,
+        category: category._id, // Set the category field with the _id of the found category
         description: details.description,
         blocked: 0,
         "images.image1": files.image1[0].filename,
@@ -73,6 +76,7 @@ const inserproduct = async (req, res) => {
     res.status(500).json({ error: "Internal server error" });
   }
 };
+
 
 //==============================problock===================================
 
@@ -99,7 +103,7 @@ const problock = async (req, res) => {
   }
 };
 
-//==============================prouppage===================================
+//==============================product update page============================
 
 
 const prouppage = async (req, res) => {

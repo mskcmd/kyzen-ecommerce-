@@ -188,15 +188,7 @@ const deletuser = async (req, res) => {
   }
 };
 
-const cateDelete = async (req, res) => {
-  try {
-    const id = req.query.id;
-    await Cate.deleteOne({ _id: id });
-    res.redirect("/admin/category");
-  } catch (error) {
-    console.log(error.message);
-  }
-};
+
 
 //==============================adduser===================================
 
@@ -309,8 +301,6 @@ module.exports = {
   dashbord,
   adminLogout,
   showuser,
-  // blockuser,
-  // unblockuser,
   userunblock,
   edituser,
   updateuser,
@@ -321,7 +311,6 @@ module.exports = {
   addCategory,
   addCate,
   unandblock,
-  cateDelete,
   cateuppage,
   editCate,
 };

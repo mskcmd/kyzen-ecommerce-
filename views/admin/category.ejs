@@ -22,7 +22,6 @@ include('../admin/layouts/adminnavebar') %>
                 <th>Status</th>
                 <th>Action</th>
                 <th>Update</th>
-                <th>Delete</th>
               </tr>
               <% if (cate.length > 0) { %> <% for (let i = 0; i < cate.length;
               i++) { %>
@@ -57,13 +56,6 @@ include('../admin/layouts/adminnavebar') %>
                       style="background-color: rgb(0, 30, 255); color: white"
                     >
                       Update
-                    </button>
-                  </a>
-                </td>
-                <td>
-                  <a href="/admin/cateDelete?id=<%=cate[i]._id%>">
-                    <button style="background-color: red; color: white">
-                      Delete
                     </button>
                   </a>
                 </td>

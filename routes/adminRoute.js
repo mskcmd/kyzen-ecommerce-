@@ -59,7 +59,6 @@ admin_route.get("/block", adminController.userunblock);
 //===================================Cate = block/unbock=====================================
 
 admin_route.get("/un-block", Auth.isLogin, adminController.unandblock);
-admin_route.get("/cateDelete", Auth.isLogin, adminController.cateDelete);
 
 admin_route.get("/cateUpdate", Auth.isLogin, adminController.cateuppage);
 admin_route.post("/updatecategory", Auth.isLogin, adminController.editCate);
